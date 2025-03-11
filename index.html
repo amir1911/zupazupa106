@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Kelas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Plus+Jakarta+Sans:wght@200..800&family=Poppins:wght@100;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline id="video-background">
+        <source src="amir3.mp4" type="video/mp4">
+        Browser Anda tidak mendukung video.
+    </video>
+
+    <!-- Header -->
+    <header>
+        <h1>Album Zupazupa106</h1>
+        <audio class="audio-container" controls autoplay loop>
+            <source src="musik.mp3" type="audio/mpeg">
+            Browser Anda tidak mendukung audio.
+        </audio>
+    </header>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <img id="slideshow" class="slideshow-image" src="img/foto3.jpg" alt="Foto Kegiatan">
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+  
+
+    <!-- Album Foto Anggota Kelas -->
+    <div class="container">
+        <header>
+            <h1 class="my-title">Member Of Zupazupa106</h1>
+        </header>
+    
+        <div class="members">
+            <div class="member" onclick="openModal('img/amr.jpg')">
+                <img src="img/amr.jpg" alt="Anggota 1">
+                <p>Amirullah</p>
+                <a href="https://www.instagram.com/amirrrrrr_1?igsh=aGViaWJ6dHVzc3Z4" target="_blank" class="instagram-link">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+                
+            </div>
+            <div class="member" onclick="openModal('img/zami.jpg')">
+                <img src="img/zami.jpg" alt="Anggota 2">
+                <p>M.Zamzami</p>
+                <a href="https://www.instagram.com/mzamm_11?igsh=MTA3N2lkNWpuZWNhbw==" target="_blank" class="instagram-link">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+                
+            </div>
+            <div class="member" onclick="openModal('img/aby.jpg')">
+                <img src="img/aby.jpg" alt="Anggota 3">
+                <p>Wharnsby Rahman Azhari</p>
+                <a href="https://www.instagram.com/siswa1" target="_blank" class="instagram-link">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+                
+            </div>
+
+            <div class="member" onclick="openModal('img/farid.jpg')">
+                <img src="img/farid.jpg" alt="Anggota 5">
+                <p>Miftah Farid</p>
+                <a href="https://www.instagram.com/miftah_farid274?igsh=aWQxcXhhaHd5MDZk" target="_blank" class="instagram-link">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+            </div>
+
+            <div class="member" onclick="openModal('img/slamet.jpg')">
+                <img src="img/slamet.jpg" alt="Anggota 5">
+                <p>Slamet Ariyadi</p>
+                <a href="https://www.instagram.com/mania__l2?igsh=ZWZqMDlsbjY3a2Y2" target="_blank" class="instagram-link">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+            </div>
+            <div class="member" onclick="openModal('img/nindy.jpg')">
+                <img src="img/nindy.jpg" alt="Anggota 4">
+                <p>Anindya Putri Calista </p>
+                <a href="https://www.instagram.com/anindyaacalista?igsh=b2JheWFueWgwZGJl" target="_blank" class="instagram-link">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+                
+            </div>
+            <div class="member" onclick="openModal('img/samiyah.jpg')">
+                <img src="img/samiyah.jpg" alt="Anggota 5">
+                <p>Samiyah Alifah</p>
+                <a href="https://www.instagram.com/samiyahalbar_?igsh=bWl6N3Exb2Nubzhy" target="_blank" class="instagram-link">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+            </div>
+            <div class="member" onclick="openModal('img/rara.jpg')">
+                <img src="img/rara.jpg" alt="Anggota 5">
+                <p>Rara Iswandari</p>
+                <a href="https://www.instagram.com/rra.wnd?igsh=ejBmNDl0bG9lNzc3" target="_blank" class="instagram-link">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+            </div>
+            
+           
+            <div class="member" onclick="openModal('img/erika.jpg')">
+                <img src="img/erika.jpg" alt="Anggota 5">
+                <p>Erika Juaria</p>
+                <a href="https://www.instagram.com/erkaajraa?igsh=cGNlOHl1YW15MGlv" target="_blank" class="instagram-link">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+            </div>
+            <div class="member" onclick="openModal('img/rana.jpg')">
+                <img src="img/rana.jpg" alt="Anggota 5">
+                <p>Rana</p>
+                <a href="https://www.instagram.com/ranach__?igsh=MXV3OHp4MGRwZWV6NA==" target="_blank" class="instagram-link">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+                
+            </div>
+        </div>
+    </div>
+
+      <!-- Album Foto Kegiatan -->
+      <header>
+        <h1 class="my-title">Zupazupa106 Activities Album</h1>
+    </header>
+
+    <div class="masonry-container" onclick="openModal('img/foto11.jpg')">
+        <div class="masonry-item">
+            <img src="img/foto11.jpg" alt="Kegiatan 1">
+        </div>
+        <div class="masonry-item" onclick="openModal('img/foto12.jpg')">
+            <img src="img/foto12.jpg" alt="Kegiatan 2">
+        </div>
+        <div class="masonry-item" onclick="openModal('img/foto13.jpg')">
+            <img src="img/foto13.jpg" alt="Kegiatan 3">
+        </div>
+        <div class="masonry-item" onclick="openModal('img/foto14.jpg')">
+            <img src="img/foto14.jpg" alt="Kegiatan 4">
+        </div>
+        <div class="masonry-item" onclick="openModal('img/foto1.jpg')">
+            <img src="img/foto1.jpg" alt="Kegiatan 4">
+        </div>
+        <div class="masonry-item" onclick="openModal('img/foto2.jpg')">
+            <img src="img/foto2.jpg" alt="Kegiatan 4">
+        </div>
+        <div class="masonry-item" onclick="openModal('img/foto3.jpg')">
+            <img src="img/foto3.jpg" alt="Kegiatan 4">
+        </div>
+        <div class="masonry-item" onclick="openModal('img/foto4.jpg')">
+            <img src="img/foto4.jpg" alt="Kegiatan 4">
+        </div>
+        <div class="masonry-item" onclick="openModal('img/foto5.jpg')">
+            <img src="img/foto5.jpg" alt="Kegiatan 4">
+        </div>
+        <div class="masonry-item" onclick="openModal('img/foto6.jpg')">
+            <img src="img/foto6.jpg" alt="Kegiatan 4">
+        </div>
+        <div class="masonry-item" onclick="openModal('img/foto7.jpg')">
+            <img src="img/foto7.jpg" alt="Kegiatan 4">
+        </div>
+        <div class="masonry-item" onclick="openModal('img/foto8.jpg')">
+            <img src="img/foto8.jpg" alt="Kegiatan 4">
+        </div>
+        <div class="masonry-item" onclick="openModal('img/foto9.jpg')">
+            <img src="img/foto9.jpg" alt="Kegiatan 4">
+        </div>
+        <div class="masonry-item" onclick="openModal('img/foto10.jpg')">
+            <img src="img/foto10.jpg" alt="Kegiatan 4">
+        </div>
+        <div class="masonry-item" onclick="openModal('img/foto11.jpg')">
+            <img src="img/foto11.jpg" alt="Kegiatan 4">
+        </div>
+        <div class="masonry-item" onclick="openModal('img/foto3.jpg')">
+            <img src="img/foto12.jpg" alt="Kegiatan 4">
+        </div>
+  
+        <div class="masonry-item" onclick="openModal('img/foto12.jpg')">
+            <img src="img/foto12.jpg" alt="Kegiatan 4">
+        </div>
+   
+        <div class="masonry-item" onclick="openModal('img/foto16.jpg')">
+            <img src="img/foto16.jpg" alt="Kegiatan 4">
+        </div>
+   
+        <div class="masonry-item" onclick="openModal('img/foto17.jpg')">
+            <img src="img/foto17.jpg" alt="Kegiatan 4">
+        </div>
+   
+        <div class="masonry-item" onclick="openModal('img/foto18.jpg')">
+            <img src="img/foto18.jpg" alt="Kegiatan 4">
+        </div>
+    
+        <div class="masonry-item" onclick="openModal('img/ciwi.jpg')">
+            <img src="img/ciwi.jpg" alt="Kegiatan 4">
+        </div>
+    
+        <div class="masonry-item">
+            <img src="img/ciwi3.jpg" alt="Kegiatan 4" onclick="openModal('img/ciwi3.jpg')">
+        </div>
+
+        <div class="masonry-item" onclick="openModal('img/ciwi2.jpg')">
+            <img src="img/ciwi2.jpg" alt="Kegiatan 4">
+        </div>
+    </div>
+    
+    <!-- Tambahkan Font Awesome untuk ikon Instagram -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+
+    <!-- Modal Foto -->
+    <div id="photoModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <div class="note">
+        <h1>📒 Masukan Kata-kata Mu</h1>
+
+        <div class="note-input">
+            <textarea id="noteInput" placeholder="Tulis kata-kata di sini..."></textarea>
+            <button id="saveNote">Simpan</button>
+        </div>
+
+        <h2>📌 Daftar Quetes</h2>
+        <div id="noteList"></div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

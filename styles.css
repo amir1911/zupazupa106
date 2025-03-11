@@ -1,0 +1,367 @@
+/* Reset dasar untuk memastikan tidak ada margin/padding bawaan */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+    background-color: #121212; /* Dark mode background */
+    overflow-x: hidden;
+}
+
+/* Background Video */
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Header */
+header {
+    padding: 20px;
+    background: rgba(25, 25, 25, 0.8);
+    position: relative;
+    z-index: 1;
+}
+
+/* Overlay Album Header */
+
+
+.album-header h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Slideshow */
+.slideshow-container {
+    position: relative;
+    max-width: 90%; /* Bisa juga 100% jika mau full */
+    height: 1000px; /* Sesuaikan dengan kebutuhan */
+    margin: 20px auto;
+}
+
+/* Efek Fade-in saat Slideshow Berganti */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.slideshow-image {
+    width: 100%;
+    height: 1000px;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    object-fit: cover;
+    animation: fadeIn 1s ease-in-out;
+    transition: opacity 0.8s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Tombol navigasi Slideshow */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    color: rgb(255, 253, 253);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+/* Album Foto Kegiatan */
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.album, .members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Efek Kenyalan (Bounce) pada Hover Foto */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.photo, .member {
+    background: #1e1e1e; /* Warna dark mode */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #f3f3f3bc;
+    margin: 10px;
+    padding: 10px;
+    width: 220px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo:hover, .member:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(253, 220, 2, 0.8);
+    animation: bounce 0.5s ease-in-out;
+}
+
+/* Foto */
+.photo img, .member img {
+    width: 100%;
+    border-radius: 10px;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Nama */
+.photo p, .member p {
+    color: #f8f8f8;
+    font-weight: bold;
+}
+
+/* Styling untuk link Instagram */
+.instagram-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #E4405F; /* Warna khas Instagram */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Styling untuk ikon Instagram */
+.instagram-link i {
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+/* Hover effect */
+.instagram-link:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Animasi Zoom In saat Modal Foto Dibuka */
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+.modal-content {
+    margin-top: 10%;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    animation: zoomIn 0.5s ease-in-out;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    color: rgb(240, 240, 240);
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* Animasi Tombol */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Album Foto dengan Masonry Layout */
+.masonry-container {
+    column-count: 5; /* Membagi dalam 2 kolom */
+    column-gap: 50px;
+    padding: 10px;
+    width: 100%;
+    margin: auto;
+}
+
+/* Setiap item dalam Masonry */
+.masonry-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    background: #1e1e1e; /* Warna dark mode */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #f3f3f3bc;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.masonry-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(253, 220, 2, 0.8);
+}
+
+/* Gambar dalam Masonry */
+.masonry-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+/* Caption */
+.masonry-caption {
+    padding: 10px;
+    font-weight: bold;
+    color: #f8f8f8;
+    text-align: center;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .masonry-container {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .masonry-container {
+        column-count: 1;
+    }
+}
+h1 {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 100;
+        font-style: italic;
+      
+}
+
+/* Container utama */
+.note {
+    max-width: 600px;
+    margin: 50px auto;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Judul */
+h1, h2 {
+    font-family: "Libre Baskerville", serif;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Input Catatan */
+.note-input {
+    position: relative;
+    width: 100%;
+}
+
+textarea {
+    width: calc(100% - 20px);
+    height: 120px;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    resize: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Tombol Simpan */
+button {
+    background: #ff9800;
+    border: none;
+    padding: 12px 20px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e68900;
+}
+
+/* Daftar Catatan */
+#noteList {
+    margin-top: 15px;
+}
+
+.note-card {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-btn {
+    background: #d32f2f;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #b71c1c;
+}
